@@ -1,5 +1,8 @@
 package com.qualitydevotee.test;
 
+import com.qualitydevotee.rest.meta.EnvSpecificData;
+import com.qualitydevotee.rest.meta.RestServiceHelper;
+import com.qualitydevotee.utilities.PerformWeatherDataComparison;
 import org.testng.annotations.Test;
 
 import com.qualitydevotee.pageobjects.AccuWeatherDetailPage;
@@ -12,6 +15,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+
+import java.util.HashMap;
 
 public class AccuWeatherTest {
   
@@ -30,11 +35,16 @@ public class AccuWeatherTest {
   @Test
   public void testWeatherOfCity() {
 	  AccuWeatherHomePage objHomePage=new AccuWeatherHomePage(driver);
-	  AccuWeatherDetailPage objdetailsPage=objHomePage.selectCity("Pune");
+      String city = EnvSpecificData.getConfig().get("cityName");
+	  AccuWeatherDetailPage objdetailsPage=objHomePage.selectCity(city);
 	  objdetailsPage.clickMoreDetailsButton();
 	  objdetailsPage.closeAdvPopupIfExist();
-	  Assert.assertEquals("Pune", objdetailsPage.getCityName());
-	  objdetailsPage.getSelectedParametersAndValues();
+	  Assert.assertEquals(city, objdetailsPage.getCityName());
+      HashMap<String, Integer> uiMap = objdetailsPage.getSelectedParametersAndValues();
+      HashMap<String, Integer> restMap = RestServiceHelper.getDataFromRestService(EnvSpecificData.getConfig().get("cityName"));
+      System.out.println("UI map"+ uiMap);
+      System.out.println("REST map"+ restMap);
+      PerformWeatherDataComparison.compare(uiMap, restMap);
  }  
 
   @AfterClass
