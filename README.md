@@ -11,14 +11,14 @@ Weather Comparison Utility
 2. Built variance logic (configurable) that returns a success if parameter difference is within a specified range, else return a an error message
 
 - Technologies used
-  - Language - Java
-  - Tools
-  - Selenium for UI automation
-  - Rest assured for API automation
-  - Appium for mobile web automation
-  - Extent report for report generation
-  - Testng for running test
-  - Apache Maven for build automation
+ 1. Language - Java
+ 2. Tools
+ 3. Selenium for UI automation
+ 4. Rest assured for API automation
+ 5. Appium for mobile web automation
+ 6. Extent report for report generation
+ 7. Testng for running test
+ 8. Apache Maven for build automation
 
-- How to run?:
+- How to run?
   - Need to run testng.xml file  
