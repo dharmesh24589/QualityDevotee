@@ -19,3 +19,6 @@ Weather Comparison Utility
   - Extent report for report generation
   - Testng for running test
   - Apache Maven for build automation
+
+- How to run?:
+  - Need to run testng.xml file  
