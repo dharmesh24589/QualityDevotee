@@ -25,5 +25,5 @@
  1. Set city name and corresponding threshold values on Appconfig.properties file
  2. Run testng.xml file
 
-- Report
- 1.Extent report generated can be seen at this path "..\QualityDevotee\QualityDevotee\test-output\Report\test\OpenWeatherAPIReport.html"
+- Report: 
+ 1. Extent report generated can be seen at this path "..\QualityDevotee\QualityDevotee\test-output\Report\test\OpenWeatherAPIReport.html"
