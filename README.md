@@ -1,6 +1,7 @@
 **Weather Comparison Utility**
 
-**Theme : Test platform**
+**Theme : Smart Test Implementation**
+
 - Phase 1
 1. Used https://www.accuweather.com/ portal to search a city (configurable) for details viz. temperature, pressure, humidity and visibility
 
