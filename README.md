@@ -21,4 +21,5 @@ Weather Comparison Utility
  8. Apache Maven for build automation
 
 - How to run?
-  - Need to run testng.xml file  
+ 1. Set city name and corresponding threshold values on Appconfig.properties file
+ 2. Run testng.xml file  
