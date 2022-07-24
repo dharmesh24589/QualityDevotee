@@ -33,7 +33,7 @@ public class AccuWeatherTest {
   }
   
   @Test
-  public void testWeatherOfCity() {
+  public void qualityDevoteeTest() {
 	  AccuWeatherHomePage objHomePage=new AccuWeatherHomePage(driver);
       String city = EnvSpecificData.getConfig().get("cityName");
 	  AccuWeatherDetailPage objdetailsPage=objHomePage.selectCity(city);
