@@ -12,7 +12,6 @@ import com.relevantcodes.extentreports.LogStatus;
 public class ExtentReportListener implements ITestListener{
     public static ExtentReports reports;
     public static ExtentTest test;
-
     public static String resultpath = getResultPath();
 
 
