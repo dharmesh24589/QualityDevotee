@@ -15,11 +15,13 @@ Weather Comparison Utility
  2. Tools
  3. Selenium for UI automation
  4. Rest assured for API automation
- 5. Appium for mobile web automation
- 6. Extent report for report generation
- 7. Testng for running test
- 8. Apache Maven for build automation
+ 5. Extent report for report generation
+ 6. Testng for running test
+ 7. Apache Maven for build automation
 
 - How to run?
  1. Set city name and corresponding threshold values on Appconfig.properties file
- 2. Run testng.xml file  
+ 2. Run testng.xml file
+
+- Report
+ 1.Extent report generated can be seen at this path "..\QualityDevotee\QualityDevotee\test-output\Report\test\OpenWeatherAPIReport.html"
