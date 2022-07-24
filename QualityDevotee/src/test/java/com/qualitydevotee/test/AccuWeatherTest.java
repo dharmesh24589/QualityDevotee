@@ -19,37 +19,37 @@ import org.testng.annotations.AfterClass;
 import java.util.HashMap;
 
 public class AccuWeatherTest {
-  
-  WebDriver driver;
 
-  @BeforeClass
-  public void beforeClass() {
-	  driver=DriverSetup.getDriver();
-  }
-  
-  @BeforeMethod
-  public void beforeMethod() {
-	driver.get("https://www.accuweather.com/");
-  }
-  
-  @Test
-  public void qualityDevoteeTest() {
-	  AccuWeatherHomePage objHomePage=new AccuWeatherHomePage(driver);
-      String city = EnvSpecificData.getConfig().get("cityName");
-	  AccuWeatherDetailPage objdetailsPage=objHomePage.selectCity(city);
-	  objdetailsPage.clickMoreDetailsButton();
-	  objdetailsPage.closeAdvPopupIfExist();
-	  Assert.assertEquals(city, objdetailsPage.getCityName());
-      HashMap<String, Integer> uiMap = objdetailsPage.getSelectedParametersAndValues();
-      HashMap<String, Integer> restMap = RestServiceHelper.getDataFromRestService(EnvSpecificData.getConfig().get("cityName"));
-      System.out.println("UI map"+ uiMap);
-      System.out.println("REST map"+ restMap);
-      PerformWeatherDataComparison.compare(uiMap, restMap);
- }  
+    WebDriver driver;
 
-  @AfterClass
-  public void afterClass() {
-	  driver.quit();
-  }
+    @BeforeClass
+    public void beforeClass() {
+        driver = DriverSetup.getDriver();
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        driver.get("https://www.accuweather.com/");
+    }
+
+    @Test
+    public void qualityDevoteeTest() {
+        AccuWeatherHomePage objHomePage = new AccuWeatherHomePage(driver);
+        String city = EnvSpecificData.getConfig().get("cityName");
+        AccuWeatherDetailPage objdetailsPage = objHomePage.selectCity(city);
+        objdetailsPage.clickMoreDetailsButton();
+        objdetailsPage.closeAdvPopupIfExist();
+        Assert.assertEquals(city, objdetailsPage.getCityName());
+        HashMap<String, Integer> uiMap = objdetailsPage.getSelectedParametersAndValues();
+        HashMap<String, Integer> restMap = RestServiceHelper.getDataFromRestService(EnvSpecificData.getConfig().get("cityName"));
+        System.out.println("UI map" + uiMap);
+        System.out.println("REST map" + restMap);
+        PerformWeatherDataComparison.compare(uiMap, restMap);
+    }
+
+    @AfterClass
+    public void afterClass() {
+        driver.quit();
+    }
 
 }

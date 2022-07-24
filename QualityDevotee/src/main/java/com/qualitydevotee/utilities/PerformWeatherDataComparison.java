@@ -25,7 +25,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
             int uiData = restServiceWeatherData.get(key);
             int restData = uiWeatherServiceData.get(key);
             if (key.equalsIgnoreCase("temperature")) {
-                if (uiData > restData) {
+                if (uiData >= restData) {
                     if (((uiData - restData) <= Integer.parseInt(acceptableTempDiff))) {
                         test.log(LogStatus.PASS, "The difference between temperature in Celsius on UI and Rest service is within acceptable range");
                         testTempFlag = true;
@@ -35,7 +35,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                         test.log(LogStatus.INFO, "UI Temp in Celsius on UI=" + uiData + ", Rest Temp= " + restData + " Difference is " + (uiData - restData) + " acceptable is " + acceptableTempDiff);
                     }
                 }
-                if (restData > uiData) {
+                if (restData >= uiData) {
                     if (((restData - uiData) <= Integer.parseInt(acceptableTempDiff))) {
                         test.log(LogStatus.PASS, "The difference between temperature in Celsius on UI and Rest service is within acceptable range");
                         testTempFlag = true;
@@ -48,7 +48,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                 }
             }
             if (key.equalsIgnoreCase("humidity")) {
-                if (uiData > restData) {
+                if (uiData >= restData) {
                     if (((uiData - restData) <= Integer.parseInt(acceptableHumidityDiff))) {
                         testHumidityFlag = true;
                         test.log(LogStatus.PASS, "The difference between humidity percentage on UI and Rest service is within acceptable range");
@@ -59,7 +59,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
 
                     }
                 }
-                if (restData > uiData) {
+                if (restData >= uiData) {
                     if (((restData - uiData) <= Integer.parseInt(acceptableHumidityDiff))) {
                         testHumidityFlag = true;
                         test.log(LogStatus.PASS, "The difference between humidity percentage on UI and Rest service is within acceptable range");
@@ -72,7 +72,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                 }
             }
             if (key.equalsIgnoreCase("pressure")) {
-                if (uiData > restData) {
+                if (uiData >= restData) {
                     if (((uiData - restData) <= Integer.parseInt(acceptablePressureDiff))) {
                         testPressureFlag = true;
                         test.log(LogStatus.PASS, "The difference between Pressure in MB on UI and Rest service is within acceptable range");
@@ -82,7 +82,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                         test.log(LogStatus.INFO, "Pressure in MB on UI = " + uiData + ", Rest pressure = " + restData + " Difference is " + (uiData - restData) + " acceptable is " + acceptablePressureDiff);
                     }
                 }
-                if (restData > uiData) {
+                if (restData >= uiData) {
                     if (((restData - uiData) <= Integer.parseInt(acceptablePressureDiff))) {
                         testPressureFlag = true;
                         test.log(LogStatus.PASS, "The difference between Pressure in MB on UI and Rest service is within acceptable range");
@@ -95,7 +95,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                 }
             }
             if (key.equalsIgnoreCase("visibility")) {
-                if (uiData > restData) {
+                if (uiData >= restData) {
                     if (((uiData - restData) <= Integer.parseInt(acceptablevisibilityDiff))) {
                         testVisibilityFlag = true;
                         test.log(LogStatus.PASS, "The difference between Visibility in KM on UI and Rest service is within acceptable range");
@@ -105,7 +105,7 @@ public class PerformWeatherDataComparison extends ExtentReportListener {
                         test.log(LogStatus.INFO, "Visibility in KM on UI =" + uiData + " Rest visibility= " + restData + " Difference is " + (uiData - restData) + " acceptable is " + acceptablevisibilityDiff);
                     }
                 }
-                if (restData > uiData) {
+                if (restData >= uiData) {
                     if (((restData - uiData) <= Integer.parseInt(acceptablevisibilityDiff))) {
                         testVisibilityFlag = true;
                         test.log(LogStatus.PASS, "The difference between Visibility in KM on UI and Rest service is within acceptable range");
