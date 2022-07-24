@@ -26,7 +26,7 @@ public class AccuWeatherHomePage extends BaseClass{
 		List<WebElement> lst = driver.findElements(
 				By.xpath("//div[@class='results-container']//div[@class='search-bar-result search-result']"));
 		for (WebElement em : lst) {
-			if(em.getText().toString().contains("Pune")) {
+			if(em.getText().toString().contains(city)) {
 				em.click();
 				break;
 			}

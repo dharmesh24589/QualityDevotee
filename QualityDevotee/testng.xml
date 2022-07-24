@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="TestVagrantSuite">
+<suite name="OpenWeatherTests">
     <listeners>
         <listener class-name="com.qualitydevotee.listeners.ExtentReportListener"/>
     </listeners>
-    <test name="TestVagrantTests">
+    <test name="OpenWeatherTest">
         <classes>
             <class name="com.qualitydevotee.test.AccuWeatherTest"></class>
         </classes>
